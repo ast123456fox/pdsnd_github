@@ -277,16 +277,16 @@ def main():
         count = 0
         lines = 0
 
-# The loop below shows 5 rows of the dataset, whenever the answer is 'yes'
+# The loop below shows 10 rows of the dataset, whenever the answer is 'yes'
 
         while True:
 
-            view = input('You would like to view the 5 lines of the dataset? Enter yes or no.\n').lower()
+            view = input('You would like to view the 10 lines of the dataset? Enter yes or no.\n').lower()
 
             if view == 'yes':
-                print(df.iloc[count:lines+5])
-                lines += 5
-                count += 5
+                print(df.iloc[count:lines+10])
+                lines += 10
+                count += 10
 
             elif view == 'no':
                 break
