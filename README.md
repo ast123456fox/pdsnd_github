@@ -11,6 +11,7 @@ Describe what your project is about and what it does:
 
 ### Changes
 * Hello I'm change no. 1.
+* Hello I'm change no. 2.
 
 ### Files used
 Include the files used:
