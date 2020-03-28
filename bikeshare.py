@@ -35,13 +35,13 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    
+
     city = input("Input city name: ").lower()
 
     while city not in ['chicago', 'new york city', 'washington']:
         city = input(
         "City is name is invalid! Please input another name: ").lower()
-    
+
     month = input("Input month name: ").lower()
 
     day = input("Input day of week: ").lower()
@@ -95,17 +95,17 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-   
+
     print("The most common month is: {}".format(
         str(df['month'].mode().values[0]))
     )
 
-   
+
     print("The most common day of the week: {}".format(
         str(df['day_of_week'].mode().values[0]))
     )
 
-  
+
     df['start_hour'] = df['Start Time'].dt.hour
     print("The most common start hour: {}".format(
         str(df['start_hour'].mode().values[0]))
@@ -169,7 +169,7 @@ def user_stats(df, city):
     print(df['User Type'].value_counts())
 
     if city != 'washington':
-     
+
         print("Here are the counts of gender:")
         print(df['Gender'].value_counts())
 
@@ -180,7 +180,7 @@ def user_stats(df, city):
 
 
     if 'Gender' in df.columns:
-    
+
         genders = df['Gender'].value_counts().keys()
         count_genders = df['Gender'].value_counts().tolist()
         genders_count = dict(zip(genders,count_genders))
@@ -276,18 +276,18 @@ def main():
 
         count = 0
         lines = 0
-        
-The loop below shows 5 rows of the dataset, whenever the answer is 'yes'       
+
+# The loop below shows 5 rows of the dataset, whenever the answer is 'yes'
 
         while True:
-            
+
             view = input('You would like to view the 5 lines of the dataset? Enter yes or no.\n').lower()
-            
+
             if view == 'yes':
                 print(df.iloc[count:lines+5])
                 lines += 5
                 count += 5
-               
+
             elif view == 'no':
                 break
 
@@ -300,5 +300,3 @@ The loop below shows 5 rows of the dataset, whenever the answer is 'yes'
 
 if __name__ == "__main__":
 	main()
-    
-    
